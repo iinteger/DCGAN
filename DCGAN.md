@@ -24,27 +24,22 @@
 
   * 이전에도 GAN에 Conv 구조를 적용하고자 하는 시도는 있었으나 성공적이지 못했음. 본 논문에서는 실험**(extensive)**을 통해 안정적으로 학습할 수 있는 네트워크 구조를 찾음
 
-    1. Pooling Layer를 Strided Convolution(D)과 fractional-strided Convolution(G)로 대체
+    <br/>1. Pooling Layer를 Strided Convolution(D)과 fractional-strided Convolution(G)로 대체
 
        
 
-    2. 두 모델에 BatchNormalization 사용. 이때 모든 Layer에 사용하는것은 아니고,
+    <br/>2. 두 모델에 BatchNormalization 사용. 이때 모든 Layer에 사용하는것은 아니고, G의 Output Layer와 D의 Input Layer에도 사용하지 않음
+       <br/>-> Gradient smoothing이 Mode Collapsing을 완화해주지만 학습의 대상이 되는 Original Image의 변질은 Generation task에 좋지 못한 영향을 끼치기 때문이 아닐까 예상됨
 
-       1) G의 Output Layer와,
-
-       2) D의 Input Layer에도 사용하지 않음
-
-       -> Gradient smoothing이 Mode Collapsing을 완화해주지만 학습의 대상이 되는 Original Image의 변질은 Generation task에 좋지 못한 영향을 끼치기 때문이 아닐까 예상됨
-
-    3. Fully Connected Layer 제거
+    <br/>3. Fully Connected Layer 제거
 
        
 
-    4. Generator의 모든 활성화함수로 ReLU 사용. 이때 Output만 Tanh 사용
+    <br/>4. Generator의 모든 활성화함수로 ReLU 사용. 이때 Output만 Tanh 사용
 
        
 
-    5. Discriminator의 모든 활성화함수로 LeakyReLU 사용
+    <br/>5. Discriminator의 모든 활성화함수로 LeakyReLU 사용
 
        
 
