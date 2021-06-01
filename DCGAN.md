@@ -39,7 +39,7 @@
 
        
 
-    <br/>5. Discriminator의 모든 활성화함수로 LeakyReLU 사용
+    <br/>5. Discriminator의 모든 활성화함수로 LeakyReLU 사용<br/>
 
        
 
