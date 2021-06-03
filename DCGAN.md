@@ -93,6 +93,8 @@
 
   * 위 실험 결과들은 모델이 latent vector를 output image와 단순히 1:1 mapping을 하는 것이 아닌, 데이터를 **이해**하고 있다는 것을 뒷받침함
 
+  * 그러나 training이 길어질 경우, mode collapsing이나 oscillating mode 같은 문제가 간헐적으로 발생하기 때문에 이를 해결하여야 하며, Latent Space의 property를 파악하기 위한 노력을 후속 연구로 
+
     
 
     
